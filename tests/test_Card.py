@@ -32,6 +32,24 @@ def test_wrong_card_syntax(card_string):
         Card(card_string)
 
 
+def test_repr():
+    """
+    Test that repr gives a vaguely useful response rather than an object id.
+    """
+    card = Card("8C")
+    assert "8" in repr(card)
+    assert "C" in repr(card) or "clubs" in card.lower()
+
+
+def test_str():
+    """
+    Test that str gives a vaguely useful response rather than an object id.
+    """
+    card = Card("8C")
+    assert "8" in repr(card)
+    assert "C" in repr(card) or "clubs" in card.lower()
+
+
 def test_comparison_equals():
     """
     Test equality comparison.
