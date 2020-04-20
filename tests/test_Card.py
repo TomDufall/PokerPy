@@ -30,3 +30,18 @@ def test_create_fake_card(card_string):
 def test_wrong_card_syntax(card_string):
     with pytest.raises(ValueError):
         Card(card_string)
+
+
+def test_comparison_equals():
+    """
+    Test equality comparison.
+    """
+    a = Card("3H")
+    b = Card("8C")
+    c = Card("3H")
+    assert a == c
+    assert c == a
+    assert a == a
+    assert b == b
+    assert c == c
+    assert a != b and b != a and c != b and b != c
