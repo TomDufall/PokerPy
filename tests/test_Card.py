@@ -38,7 +38,7 @@ def test_repr():
     """
     card = Card("8C")
     assert "8" in repr(card)
-    assert "C" in repr(card) or "clubs" in card.lower()
+    assert "C" in repr(card) or "clubs" in repr(card).lower()
 
 
 def test_str():
@@ -47,7 +47,7 @@ def test_str():
     """
     card = Card("8C")
     assert "8" in repr(card)
-    assert "C" in repr(card) or "clubs" in card.lower()
+    assert "C" in repr(card) or "clubs" in repr(card).lower()
 
 
 def test_comparison_equals():
