@@ -63,3 +63,26 @@ def test_comparison_equals():
     assert b == b
     assert c == c
     assert a != b and b != a and c != b and b != c
+
+
+def test_value_comparison_equals():
+    a = Card("QC")
+    b = Card("QD")
+    c = Card("QH")
+    d = Card("QS")
+    assert a.value == b.value == c.value == d.value
+
+
+def test_value_comparison_numbers():
+    for i in range(2, 10):
+        a = Card(f"{i}H")
+        b = Card(f"{i + 1}H")
+        assert a.value < b.value
+
+
+def test_value_comparison_complex():
+    assert Card("10H").value < Card("JC").value
+    assert Card("JC").value < Card("QS").value
+    assert Card("QS").value < Card("KD").value
+    assert Card("KD").value < Card("AH").value
+    assert Card("2C").value < Card("AH").value
